@@ -1,9 +1,10 @@
 /* ===================================================
-   VERSION 1 HEADER CODE — FINAL (ARCADE + NORMAL)
+   VERSION 1 HEADER CODE — FINAL (GLOBAL + GAME)
    =================================================== */
 
+
 /* ===================================================
-   GLOBAL / NON-GAME RULES (KEEP)
+   GLOBAL / NON-GAME RULES
    =================================================== */
 
 /* Always show coupon input form */
@@ -70,6 +71,9 @@ html, body {
   box-shadow: 0 1px 1px rgba(0,0,0,0.05);
   margin: 0 !important;
   border-top: 0 solid transparent;
+
+  /* space below menu buttons */
+  padding-bottom: 12px !important;
 }
 
 /* Prevent spacing inside menu */
@@ -121,6 +125,30 @@ body.admin-bar {
   }
 }
 
+
+/* ===================================================
+   🌍 GLOBAL HEADER SPACING — MENU BUTTONS
+   =================================================== */
+
+.site-header .main-navigation a,
+.site-header .menu > li > a {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  line-height: 1.2 !important;
+}
+
+
+/* ===================================================
+   🌍 GLOBAL LOGO → MENU GAP REDUCTION
+   =================================================== */
+
+/* Reduce ONLY the bottom margin of logo block */
+.site-header .site-branding {
+  margin-bottom: 2px !important;   /* was larger before */
+  padding-bottom: 0 !important;
+}
+
+
 /* ===================================================
    🎮 GAME PAGES ONLY — body.is-games
    =================================================== */
@@ -132,7 +160,7 @@ body.is-games #top-contact-bar {
 
 /* Reduce top spacing now that bar is gone */
 body.is-games {
-  padding-top: 80px !important; /* adjust 70–100 if needed */
+  padding-top: 80px !important;
 }
 
 /* Make entire game page black */
@@ -159,7 +187,7 @@ body.is-games .woocommerce-products-header {
 body.is-games .site-header {
   background: #000 !important;
   padding-top: 6px !important;
-  padding-bottom: 6px !important;
+  padding-bottom: 14px !important;
   box-shadow:
     0 0 12px rgba(14,144,92,0.35),
     0 0 24px rgba(14,144,92,0.25),
@@ -167,18 +195,7 @@ body.is-games .site-header {
   border-bottom: 1px solid rgba(14,144,92,0.6) !important;
 }
 
-/* Reduce menu item height */
-@media (min-width: 768px) {
-  body.is-games .main-navigation a,
-  body.is-games .site-header .menu > li > a {
-    padding: 6px 10px !important;
-    line-height: 1.2 !important;
-  }
-}
-
-/* ===============================
-   REMOVE LOGO + SEARCH (GAME)
-   =============================== */
+/* Remove logo + search on game pages only */
 body.is-games .site-header .site-branding,
 body.is-games .site-header .custom-logo,
 body.is-games .site-header .custom-logo-link,
@@ -198,9 +215,7 @@ body.is-games .site-header .main-navigation {
   margin: 0 !important;
 }
 
-/* ===============================
-   MENU GLOW (GAME)
-   =============================== */
+/* Menu glow (game pages) */
 body.is-games .main-navigation a,
 body.is-games .site-header .menu > li > a {
   color: #0E905C !important;
@@ -213,18 +228,14 @@ body.is-games .main-navigation a:hover {
   text-shadow: 0 0 12px rgba(43,224,152,0.9);
 }
 
-/* ===============================
-   CART ICON GLOW (GAME)
-   =============================== */
+/* Cart icon glow (game pages) */
 body.is-games .site-header-cart .cart-contents,
 body.is-games .site-header-cart .cart-contents * {
   color: #0E905C !important;
   text-shadow: 0 0 6px rgba(14,144,92,0.7);
 }
 
-/* ===============================
-   TEXT COLOUR (GAME)
-   =============================== */
+/* Text colour (game pages) */
 body.is-games h1,
 body.is-games h2,
 body.is-games h3,
@@ -235,9 +246,10 @@ body.is-games p {
   color: #fff !important;
 }
 
-/* ===============================
+
+/* ===================================================
    NOT RELATED TO HEADER
-   =============================== */
+   =================================================== */
 
 /* Hide AIOVG share icons */
 .aiovg-social-share,
