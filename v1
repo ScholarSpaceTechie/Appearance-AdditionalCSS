@@ -1,174 +1,30 @@
-/* Make Header Black for Arcade Games*/
-/***************************************************
- *  GAMES MM001–MM005 — FULL BLACK + NEON HEADER THEME
- *  Applies to URLs like: /games-mm001 ... /games-mm005
- ***************************************************/
+/* ===================================================
+   VERSION 1 HEADER CODE — FINAL (ARCADE + NORMAL)
+   =================================================== */
 
-/* Target any page whose slug contains "games-mm" */
-body[class*="games-mm"],
-body[class*="games-mm"] #page,
-body[class*="games-mm"] .site,
-body[class*="games-mm"] .site-content,
-body[class*="games-mm"] #content,
-body[class*="games-mm"] #primary,
-body[class*="games-mm"] #main,
-body[class*="games-mm"] .content-area,
-body[class*="games-mm"] .entry-content,
-body[class*="games-mm"] .hentry,
-body[class*="games-mm"] article,
-body[class*="games-mm"] .site-main,
-body[class*="games-mm"] .storefront-breadcrumb,
-body[class*="games-mm"] .woocommerce-products-header {
-  background: #000 !important;
-}
+/* ===================================================
+   GLOBAL / NON-GAME RULES (KEEP)
+   =================================================== */
 
-/*******************
- *  HEADER GLOW MODE
- *******************/
-
-/* Header background (avoid nuking ALL descendants with *) */
-body[class*="games-mm"] .site-header {
-  background: #000 !important;
-}
-
-/* Keep inner wrappers black too (safer than .site-header *) */
-body[class*="games-mm"] .site-header,
-body[class*="games-mm"] .site-header .col-full,
-body[class*="games-mm"] .site-header .site-branding,
-body[class*="games-mm"] .site-header .site-search,
-body[class*="games-mm"] .site-header .main-navigation {
-  background: #000 !important;
-}
-
-/* Header neon outer glow */
-body[class*="games-mm"] .site-header {
-  box-shadow:
-    0 0 12px rgba(14,144,92,0.35),
-    0 0 24px rgba(14,144,92,0.25),
-    0 0 48px rgba(14,144,92,0.15);
-  border-bottom: 1px solid rgba(14,144,92,0.6);
-  position: relative;
-  z-index: 999;
-}
-
-/********************************
- *  REDUCE HEADER HEIGHT (DESKTOP)
- ********************************/
-@media (min-width: 768px) {
-  body[class*="games-mm"] .site-header {
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
-  }
-
-  body[class*="games-mm"] .main-navigation a,
-  body[class*="games-mm"] .site-header .menu > li > a {
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
-    line-height: 1.2 !important;
-  }
-}
-
-/********************************
- *  REMOVE LOGO + SEARCH (FORCE REFLOW)
- ********************************/
-
-/* 1) Hide the blocks */
-body[class*="games-mm"] .site-header .site-branding,
-body[class*="games-mm"] .site-header .site-search,
-body[class*="games-mm"] .site-header .woocommerce-product-search {
-  display: none !important;
-}
-
-/* 2) Storefront-specific: remove the “table-cell” widths so nav can expand */
-@media (min-width: 768px) {
-  body[class*="games-mm"] .site-header .col-full {
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  body[class*="games-mm"] .site-header .col-full > * {
-    width: auto !important;
-    float: none !important;
-  }
-
-  /* Make navigation take full width now that logo/search are gone */
-  body[class*="games-mm"] .site-header .main-navigation {
-    flex: 1 1 auto !important;
-    width: 100% !important;
-    margin: 0 !important;
-  }
-}
-
-/*************************
- *  MENU LINKS — GREEN GLOW
- *************************/
-body[class*="games-mm"] .main-navigation a,
-body[class*="games-mm"] .site-header a,
-body[class*="games-mm"] .site-header .menu > li > a {
-  color: #0E905C !important;
-  text-shadow: 0 0 6px rgba(14,144,92,0.7);
-  transition: 0.25s ease-in-out;
-}
-
-body[class*="games-mm"] .main-navigation a:hover,
-body[class*="games-mm"] .site-header a:hover {
-  color: #2BE098 !important;
-  text-shadow: 0 0 12px rgba(43,224,152,0.9);
-}
-
-/**********************
- *  CART ICON GLOW
- **********************/
-body[class*="games-mm"] .site-header-cart .cart-contents,
-body[class*="games-mm"] .site-header-cart .cart-contents * {
-  color: #0E905C !important;
-  text-shadow: 0 0 6px rgba(14,144,92,0.7);
-}
-
-/*************************
- *  PAGE TITLES + TEXT
- *************************/
-body[class*="games-mm"] h1,
-body[class*="games-mm"] h2,
-body[class*="games-mm"] h3,
-body[class*="games-mm"] h4,
-body[class*="games-mm"] h5,
-body[class*="games-mm"] h6,
-body[class*="games-mm"] p {
-  color: #fff !important;
-}
-
-/*************************
- *  BREADCRUMBS
- *************************/
-body[class*="games-mm"] .storefront-breadcrumb,
-body[class*="games-mm"] .storefront-breadcrumb a {
-  color: #0E905C !important;
-  text-shadow: 0 0 6px rgba(14,144,92,0.7);
-}
-
-/* Make Header Black for Arcade Games END*/
-
-
-/*Sticky Header Code START Here*/
-/* Always show the coupon input form */
+/* Always show coupon input form */
 .woocommerce-checkout .checkout_coupon {
   display: block !important;
 }
 
-/* Optionally hide the toggle link */
+/* Hide coupon toggle */
 .woocommerce-form-coupon-toggle {
   display: none !important;
 }
 
-/* Double Menu CSS */
 /* Reset layout spacing */
 html, body {
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Contact Header (Header 1) */
+/* ===============================
+   HEADER 1 — TOP CONTACT BAR
+   =============================== */
 #top-contact-bar {
   background: #D9DFDE;
   position: fixed;
@@ -202,7 +58,9 @@ html, body {
   color: #333;
 }
 
-/* Main Menu Header (Header 2) */
+/* ===============================
+   HEADER 2 — MAIN HEADER (GLOBAL)
+   =============================== */
 .site-header {
   position: fixed;
   top: 1px;
@@ -211,15 +69,15 @@ html, body {
   background: #ffffff !important;
   box-shadow: 0 1px 1px rgba(0,0,0,0.05);
   margin: 0 !important;
-  border-top: 0 solid transparent; /* fallback for desktop */
+  border-top: 0 solid transparent;
 }
 
-/* Prevent spacing inside menu from causing layout shift */
+/* Prevent spacing inside menu */
 .site-header * {
   margin-top: 0 !important;
 }
 
-/* Push down page content (Desktop) */
+/* Default spacing for NON-game pages */
 body {
   padding-top: 225px !important;
 }
@@ -237,10 +95,12 @@ body.admin-bar {
   padding-top: 200px !important;
 }
 
-/* ✅ MOBILE FIXES */
+/* ===============================
+   MOBILE FIXES (GLOBAL)
+   =============================== */
 @media (max-width: 767px) {
   body {
-    padding-top: 177px !important; /* 175 + 2px gap */
+    padding-top: 177px !important;
   }
 
   #top-contact-bar {
@@ -257,14 +117,132 @@ body.admin-bar {
   }
 
   .site-header {
-    top: 50px !important; /* keep same as*
+    top: 50px !important;
+  }
+}
 
-/*NOT RELATED TO HEADER*/
+/* ===================================================
+   🎮 GAME PAGES ONLY — body.is-games
+   =================================================== */
 
-/* Hide AIOVG share icons on ALL videos */
+/* Remove sticky "Need Help?" bar on game pages */
+body.is-games #top-contact-bar {
+  display: none !important;
+}
+
+/* Reduce top spacing now that bar is gone */
+body.is-games {
+  padding-top: 80px !important; /* adjust 70–100 if needed */
+}
+
+/* Make entire game page black */
+body.is-games,
+body.is-games #page,
+body.is-games .site,
+body.is-games .site-content,
+body.is-games #content,
+body.is-games #primary,
+body.is-games #main,
+body.is-games .content-area,
+body.is-games .entry-content,
+body.is-games .hentry,
+body.is-games article,
+body.is-games .site-main,
+body.is-games .storefront-breadcrumb,
+body.is-games .woocommerce-products-header {
+  background: #000 !important;
+}
+
+/* ===============================
+   GAME HEADER — BLACK + NEON
+   =============================== */
+body.is-games .site-header {
+  background: #000 !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  box-shadow:
+    0 0 12px rgba(14,144,92,0.35),
+    0 0 24px rgba(14,144,92,0.25),
+    0 0 48px rgba(14,144,92,0.15) !important;
+  border-bottom: 1px solid rgba(14,144,92,0.6) !important;
+}
+
+/* Reduce menu item height */
+@media (min-width: 768px) {
+  body.is-games .main-navigation a,
+  body.is-games .site-header .menu > li > a {
+    padding: 6px 10px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* ===============================
+   REMOVE LOGO + SEARCH (GAME)
+   =============================== */
+body.is-games .site-header .site-branding,
+body.is-games .site-header .custom-logo,
+body.is-games .site-header .custom-logo-link,
+body.is-games .site-header .site-search,
+body.is-games .woocommerce-product-search {
+  display: none !important;
+}
+
+/* Reflow header so menu fills width */
+body.is-games .site-header .col-full {
+  display: flex !important;
+  align-items: center !important;
+}
+
+body.is-games .site-header .main-navigation {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* ===============================
+   MENU GLOW (GAME)
+   =============================== */
+body.is-games .main-navigation a,
+body.is-games .site-header .menu > li > a {
+  color: #0E905C !important;
+  text-shadow: 0 0 6px rgba(14,144,92,0.7);
+  transition: 0.25s ease-in-out;
+}
+
+body.is-games .main-navigation a:hover {
+  color: #2BE098 !important;
+  text-shadow: 0 0 12px rgba(43,224,152,0.9);
+}
+
+/* ===============================
+   CART ICON GLOW (GAME)
+   =============================== */
+body.is-games .site-header-cart .cart-contents,
+body.is-games .site-header-cart .cart-contents * {
+  color: #0E905C !important;
+  text-shadow: 0 0 6px rgba(14,144,92,0.7);
+}
+
+/* ===============================
+   TEXT COLOUR (GAME)
+   =============================== */
+body.is-games h1,
+body.is-games h2,
+body.is-games h3,
+body.is-games h4,
+body.is-games h5,
+body.is-games h6,
+body.is-games p {
+  color: #fff !important;
+}
+
+/* ===============================
+   NOT RELATED TO HEADER
+   =============================== */
+
+/* Hide AIOVG share icons */
 .aiovg-social-share,
 .aiovg-share,
 .aiovg-social,
 .aiovg-single-video-share {
-    display: none !important;
+  display: none !important;
 }
